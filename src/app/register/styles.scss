@@ -1,0 +1,145 @@
+@import "@/styles/mixins";
+
+.register {
+  grid-row: 2 / span 2;
+  grid-column: full-start / full-end;
+  justify-self: center;
+  font-size: 1.6rem;
+  text-align: center;
+  @include respond(phone) {
+    width: 90%;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3.5rem;
+    align-items: center;
+    margin: 3rem 1rem;
+  }
+  &__field {
+    label {
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      color: var(--color-dark-2);
+      font-weight: 600;
+    }
+    input {
+      padding: 1.2rem 1.5rem;
+      font-size: 1.5rem;
+      color: var(--color-dark-2);
+      border-radius: 2rem;
+      border: none;
+      background-color: var(--color-primary);
+      width: 100%;
+      transition: all 0.3s;
+      &:focus {
+        outline: none;
+        background-color: var(--color-grey-light-3);
+        scale: 1.05;
+      }
+    }
+  }
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  @include respond(phone) {
+    // 900px
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+}
+
+.modal {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 600px;
+  border: none;
+  border-radius: 12px;
+  background-color: white;
+  padding: 20px;
+  margin: auto auto;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.726);
+  }
+
+  @include respond(phone) {
+    // 900px
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 2rem;
+  overflow: auto;
+}
+
+.close-button:hover {
+  background-color: #eee;
+}
+
+.close-button:after {
+  content: "x";
+  color: black;
+}
+
+.btn-wrapper {
+  grid-column: 1 / span 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+}
+
+.btn-dark {
+  background-color: rgb(116, 107, 201);
+  color: var(--color-grey-light-3);
+}
+
+#contact-message {
+  grid-column: 1 / -1;
+}

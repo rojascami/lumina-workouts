@@ -1,0 +1,28 @@
+.feature {
+  
+  .feature__icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2;
+    transform: translateY(3rem);
+    color: var(--color-grey-light-1);
+    fill: var(--color-grey-light-1);
+    
+  }
+  &__text {
+    grid-row: 2 / -1;
+    grid-column: 1 / -1;
+    font-size: 1.2rem;
+  }
+
+}
+.heading-4{
+    grid-column: 1 / -1;
+}
+
+
+.btn-wrapper {
+  grid-column: 1 / -1;
+  align-self: end;
+  justify-self: center;
+}

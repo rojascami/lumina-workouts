@@ -1,0 +1,76 @@
+.header {
+ 
+    display: grid;
+    grid-template-rows: 1fr min-content 6rem 1fr min-content 2fr;
+    grid-template-columns: max-content;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 6rem;
+    padding: 8rem;
+  
+    text-align: center;
+  
+    &__svg {
+      margin-top: 20rem;
+
+      
+    }
+    &__heading {
+      color: var(--color-grey-light-1);
+      margin: 2rem;
+    }
+    &__btn {
+      align-self: center;
+      justify-self: center;
+      scale: 0.8;
+      border-radius: 1rem;
+    }
+    &__logo {
+      height: 3rem;
+      justify-self: center;
+    }
+    &__seenon-text {
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      grid-template-rows: 1fr 1fr;
+      align-items: center;
+      column-gap: 2rem;
+      
+      color: var(--color-grey-light-3);
+      font-size: 1.5rem;
+  
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: currentColor;
+      }
+      &::before {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: currentColor;
+      }
+    }
+  
+    &__seenon-logos {
+      display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-column-gap: 3rem;
+          justify-items: center;
+          align-items: end;
+          align-content: end;
+          
+      img {
+        height: 2rem;
+      //   filter: brightness(80%);
+      }
+    }
+  
+    &__training {
+      color: var(--color-grey-light-3);
+      font-weight: bold;
+    }
+  }
+  

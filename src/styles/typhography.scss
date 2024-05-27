@@ -1,0 +1,91 @@
+@import "mixins";
+
+
+%heading {
+    font-family: var(--font-display);
+
+  }
+  
+  .heading-1 {
+    @extend %heading;
+    font-size: 10.5rem;
+    color: var(--color-grey-light-1);
+    font-weight: 100;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -6px;
+    @include respond(tab-land) {
+      font-size: 10rem;
+     }  
+     @include respond(tab-port) {
+      font-size: 9rem;
+     }
+     @include respond(phone) {
+      font-size: 8rem;
+     }
+     
+
+  }
+  .heading-2 {
+    @extend %heading;
+    font-size: 2rem;
+    font-size: italic;
+    text-transform: uppercase;
+    line-height: 1;
+    &--light {
+      color: var(--color-grey-light-3);
+    }
+    &--dark {
+      color: var(--color-grey-dark-1);
+    }
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+     }  
+     @include respond(tab-port) {
+      font-size: 1.5rem;
+     }
+     @include respond(phone) {
+      font-size: 1.2rem;
+     }
+  }
+  
+  .heading-3 {
+    @extend %heading;
+    font-size: 3rem;
+    color: var(--color-grey-light-3);
+    text-transform: uppercase;
+
+    &--light {
+      color: var(--color-grey-light-3);
+    }
+    &--dark {
+      color: var(--color-grey-dark-1);
+    }
+
+    @include respond(tab-land) {
+      font-size: 2.5rem;
+     }  
+     @include respond(tab-port) {
+      font-size: 2rem;
+     }
+     @include respond(phone) {
+      font-size: 1.5rem;
+     }
+  }
+  
+  .heading-4 {
+    @extend %heading;
+    font-size: 1.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    &--light {
+      color: var(--color-grey-light-1);
+    }
+    &--dark {
+      color: var(--color-grey-dark-1);
+    }
+  }
+  
+  

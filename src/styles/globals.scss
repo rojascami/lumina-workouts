@@ -1,0 +1,193 @@
+@import "mixins";
+
+
+:root {
+  /* //COLOR VARIABLES */
+  --color-primary: rgb(216, 218, 247);
+  --color-primary-btn: rgb(236, 221, 252);
+  --color-primary-lightest: rgb(185, 190, 255);
+  --color-primary-light: rgb(106, 135, 214);
+  --color-primary-dark: #59678f;
+  --color-primary-pink: #df9696;
+  --color-primary-pink-light: #d1b2b2;
+  --color-grey-light-1: #f9f7f6;
+  --color-grey-light-2: #aaa;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #3e3a54;
+  --color-grey-dark-2: rgb(86, 85, 88) a54;
+  --color-grey-dark-3: #999;
+  --color-dark-1: #131313;
+  --color-dark-2: #1e1e1e;
+
+  --red: #ff6565;
+  --pink: #ff64f9;
+  --purple: #6b5fff;
+  --blue: #4d8aff;
+  --green: #5bff89;
+  --yellow: #ffee55;
+  --orange: #ff6d1b;
+
+  /* // FONT VARIABLES */
+  --font-primary: "Roboto", sans-serif;
+  --font-display: "Mohave", sans-serif;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-family: var(--font-primary);
+  box-sizing: border-box;
+  font-size: 62.5%;
+  color: var(--color-grey-dark-2);
+  font-weight: 300;
+
+  @include respond(tab-land) { // 1200px
+    font-size: 56.25%;
+   }
+
+   @include respond(tab-port) { // 900px
+    font-size: 50%;
+   }
+   
+   @include respond(big-desktop) {
+    font-size: 75%;
+   }
+}
+.container {
+  background: radial-gradient(
+    farthest-side at 51% 56%,
+    #82e8b0ff 0%,
+    #7729ffde 100%
+  );
+
+  display: grid;
+  grid-template-rows: 60vh min-content repeat(3, min-content);
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr) [full-end];
+
+    @include respond(tab-land) {
+      font-size: 10rem;
+     }  
+     @include respond(tab-port) {
+      font-size: 9rem;
+     }
+     @include respond(phone) {
+      grid-template-rows: 60vh min-content repeat(2, max-content) repeat(3, min-content);
+      grid-template-columns:
+        [sidebar-start] 1rem [sidebar-end full-start] minmax(6rem, 1fr)
+        [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+        [center-end] minmax(6rem, 1fr) [full-end];
+     }
+}
+a:active,
+a:visited,
+a:link{
+  text-decoration: none;
+}
+.features {
+  grid-column: center-start / center-end;
+
+  margin: 15rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  align-items: start;
+}
+.header {
+  grid-column: sidebar-start / full-end;
+  grid-row: 1 / 2;
+  background-size: cover;
+  background-position: center;
+
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr min-content 2fr;
+  grid-template-columns: minmax(min-content, max-content);
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 6rem;
+  padding: 8rem;
+  text-align: center;
+
+}
+.story {
+  &__content {
+    grid-column: col-start 5 / full-end;
+    padding: 6rem 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tab-land) { // 1200px
+      grid-auto-flow: column;
+     }
+     
+     @include respond(big-desktop) {
+      font-size: 75%;
+     }
+  }
+  &__pictures {
+    grid-column: full-start / col-end 4;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+  }
+
+  
+}
+.sessions {
+  grid-column: center-start / center-end;
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 7rem;
+  align-content: center;
+}
+.feature__icon {
+  width: 4.5rem;
+  height: 4.5rem;
+  grid-row: 1 / span 2;
+  transform: translateY(3rem);
+  color: var(--color-grey-light-1);
+  fill: var(--color-grey-light-1);
+}
+
+.btn {
+  text-decoration: none;
+  background-color: var(--color-primary-btn);
+  color: var(--color-primary-dark);
+  display: block;
+  border: none;
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  transition: all 0.2s;
+  border-radius: 2rem;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--color-primary-lightest);
+    font-size: 1.6rem;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+ 
+}
+#modal-root {
+  @include respond(phone) { // 900px
+    grid-column: center-start / center-end;
+   }
+   
+}

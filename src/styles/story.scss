@@ -1,0 +1,89 @@
+@import "mixins";
+
+.story {
+
+
+  &__content {
+    grid-column: col-start 5 / full-end;
+    // padding: 6rem 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(249, 247, 255, 0.862);
+    border-radius: 6rem;
+    width: 80%;
+    justify-self: center;
+
+    @include respond(tab-land) {
+      font-size: 2rem;
+     }  
+     @include respond(tab-port) {
+      grid-column: full-start / -1;
+      grid-row: 4 / 5;
+     }
+  }
+
+  &__background {
+    grid-column: col-start 5 / full-end;
+    border-radius: 6rem;
+    z-index: -100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tab-land) {
+      grid-column: full-start / full-end;
+      grid-row: 4 / 5;
+     }
+  }
+  &__pictures {
+    grid-column: full-start / col-end 4;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: start;
+
+      
+       @include respond(tab-land) {
+        grid-column: full-start / center-end;
+        grid-row: 3 / 4;
+       }
+     
+  }
+
+  &__img--1 {
+    width: 100%;
+    // height: 100%;
+    grid-row: 1 / 6;
+    grid-column: 2 / 6;
+    box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.1);
+    border-radius: 2rem;
+    transition: all 0.2s;
+  }
+  &__img--2 {
+    width: 105%;
+    z-index: 30;
+    grid-row: 3 / 6;
+    grid-column: 4 / 7;
+    box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.2);
+    border-radius: 2rem;
+    transition: all 0.2s;
+  }
+
+  &__img--1:hover,
+  &__img--2:hover {
+    transform: translateX(-2rem);
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--color-dark-2);
+
+    
+  }
+}
+
