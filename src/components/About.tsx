@@ -7,8 +7,9 @@ export default function About() {
 
     return (
         <div className="features" id="about">
-            {features.map((feature) => (
+            {features.map((feature, index) => (
                 <Feature
+                    key={index}
                     title={feature.title}
                     body={feature.body}
                 />
