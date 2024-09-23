@@ -1,6 +1,6 @@
 
 import '../styles/features.scss'
-import Card from './Card.tsx'
+import Card from '@/components/Card'
 interface FeatureProps {
   title: string;
   body: string;
