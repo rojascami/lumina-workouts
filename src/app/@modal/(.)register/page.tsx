@@ -47,7 +47,7 @@ export default function RegisterModal({ }) {
         [onDismiss, overlay, wrapper]
     );
 
-    const onKeyDown = useCallback(
+       const onKeyDown = useCallback(
         (e: KeyboardEvent) => {
             if (e.key === "Escape") onDismiss();
         },
@@ -55,10 +55,11 @@ export default function RegisterModal({ }) {
     );
 
     useEffect(() => {
-        document.addEventListener("keydown", onKeyDown);
-        return () => document.removeEventListener("keydown", onKeyDown);
+        if (typeof document !== 'undefined') {
+            document.addEventListener("keydown", onKeyDown);
+            return () => document.removeEventListener("keydown", onKeyDown);
+        }
     }, [onKeyDown]);
-
 
 
     return (

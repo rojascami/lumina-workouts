@@ -36,42 +36,40 @@ export default function RegisterModal({ }) {
         [onDismiss]
     );
 
+    useEffect(() => {
+        if (typeof document !== 'undefined') {
+            document.addEventListener("keydown", onKeyDown);
+            return () => document.removeEventListener("keydown", onKeyDown);
+        }
+    }, [onKeyDown]);
+
     return (
-        <Modal onClick={onClick} >
-            <div className='register'>
-            <h2 className='heading-2'>Contact us</h2>
-            
-                <form onSubmit={handleSubmit} className='register__form'>
-                    <div className='register__field'>
-                        <label htmlFor="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            required
-                        />
-                    </div>
-                    <div className='register__field'>
-                        <label htmlFor="name">Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            required
-                        />
-                    </div>
-                    <div className='register__field' id='contact-message'>
-    
-                     <label htmlFor="message">Message</label>
-                        <input
-                            type="textarea"
-                            id="message"
-                            required
-                        />
-                    </div>
-                    <div className='btn-wrapper'>
-                    <button className="btn btn-dark" onClick={handleSubmit}>Send</button>
-                    </div>
-                </form>
-            </div>
-        </Modal>
-    )
+        <div className='register'>
+            <form onSubmit={handleSubmit} className='register__form'>
+                <div className='register__field'>
+                    <label htmlFor="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        required
+                    />
+                </div>
+                <div className='register__field'>
+                    <label htmlFor="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        required
+                    />
+                </div>
+                <div className='register__field' id='contact-message'>
+                    <label htmlFor="message">Message</label>
+                    <input
+                        type="text"
+                        id="message"
+                    />
+                </div>
+            </form>
+        </div>
+    );
 }

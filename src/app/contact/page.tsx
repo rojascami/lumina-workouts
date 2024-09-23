@@ -1,15 +1,17 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 import '../register/styles.scss';
 
 export default function RegisterModal({ }) {
 
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-    };
+    useEffect(() => {
+        const handleSubmit = (e: React.FormEvent) => {
+            e.preventDefault();
+        };
+    }, []);
+    
 
     return (
         <div className='register'>
