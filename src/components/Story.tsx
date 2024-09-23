@@ -17,7 +17,7 @@ const Story: React.FC<{}> = () => {
       &ldquo;Highly recommend!&rdquo;
     </h2>
     <p className="story__text  mb-lg">
-      I've never been one for traditional gyms, but this website has been a game-changer for me! I found an amazing personal trainer who completely understood my goals and tailored workouts to fit my busy schedule. The virtual sessions are so convenient, and I've seen incredible results in just a few weeks. - Mary
+      I&apos;ve never been one for traditional gyms, but this website has been a game-changer for me! I found an amazing personal trainer who completely understood my goals and tailored workouts to fit my busy schedule. The virtual sessions are so convenient, and I&apos;ve seen incredible results in just a few weeks. - Mary
     </p>
     <h2 className="heading-2 heading-2--dark mb-sm">
       &ldquo;It's like having a personal trainer in my pocket&rdquo;
