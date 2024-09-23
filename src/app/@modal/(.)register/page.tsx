@@ -2,7 +2,6 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import '../../register/styles.scss';
-import Modal from '@/components/Modal';
 
 export default function RegisterModal({ }) {
     const [email, setEmail] = useState('');
@@ -57,86 +56,84 @@ export default function RegisterModal({ }) {
     }, [onKeyDown]);
 
     return (
-        <Modal onClick={onClick}>
-            <div className='register'>
-                <form onSubmit={handleSubmit} className='register__form'>
-                    <div className='register__field'>
-                        <label htmlFor='email'>Email</label>
-                        <input
-                            type='email'
-                            id='email'
-                            value={email}
-                            onChange={handleEmailChange}
-                            required
-                        />
-                    </div>
-                    <div className='register__field'>
-                        <label htmlFor='password'>Password</label>
-                        <input
-                            type='password'
-                            id='password'
-                            value={password}
-                            onChange={handlePasswordChange}
-                            minLength={6}
-                            required
-                        />
-                    </div>
-                    {!login && (
-                        <>
-                            <div className='register__field'>
-                                <label htmlFor='confirm-password'>Confirm Password</label>
-                                <input
-                                    type='password'
-                                    id='confirm-password'
-                                    minLength={6}
-                                    required
-                                />
-                            </div>
-                            <div className='register__field'>
-                                <label htmlFor='name'>Name</label>
-                                <input
-                                    type='text'
-                                    id='name'
-                                    required
-                                />
-                            </div>
-                            <div className='register__field'>
-                                <label htmlFor='phone'>Phone</label>
-                                <input
-                                    type='tel'
-                                    id='phone'
-                                    required
-                                />
-                            </div>
-                            <div className='register__field'>
-                                <label htmlFor='address'>Address</label>
-                                <input
-                                    type='text'
-                                    id='address'
-                                    required
-                                />
-                            </div>
-                        </>
-                    )}
-                    {!login ? (
-                        <div className='btn-wrapper'>
-                            <button className='btn btn-dark'>Register</button>
-                            <p className='p'>Already have an account?</p>
-                            <button className='btn btn-dark' type='button' onClick={handleSetLogin}>
-                                Login
-                            </button>
+        <div className='register'>
+            <form onSubmit={handleSubmit} className='register__form'>
+                <div className='register__field'>
+                    <label htmlFor='email'>Email</label>
+                    <input
+                        type='email'
+                        id='email'
+                        value={email}
+                        onChange={handleEmailChange}
+                        required
+                    />
+                </div>
+                <div className='register__field'>
+                    <label htmlFor='password'>Password</label>
+                    <input
+                        type='password'
+                        id='password'
+                        value={password}
+                        onChange={handlePasswordChange}
+                        minLength={6}
+                        required
+                    />
+                </div>
+                {!login && (
+                    <>
+                        <div className='register__field'>
+                            <label htmlFor='confirm-password'>Confirm Password</label>
+                            <input
+                                type='password'
+                                id='confirm-password'
+                                minLength={6}
+                                required
+                            />
                         </div>
-                    ) : (
-                        <div className='btn-wrapper'>
-                            <button className='btn btn-dark'>Login</button>
-                            <p className='p'>New here?</p>
-                            <button className='btn btn-dark' type='button' onClick={handleSetLogin}>
-                                Register
-                            </button>
+                        <div className='register__field'>
+                            <label htmlFor='name'>Name</label>
+                            <input
+                                type='text'
+                                id='name'
+                                required
+                            />
                         </div>
-                    )}
-                </form>
-            </div>
-        </Modal>
+                        <div className='register__field'>
+                            <label htmlFor='phone'>Phone</label>
+                            <input
+                                type='tel'
+                                id='phone'
+                                required
+                            />
+                        </div>
+                        <div className='register__field'>
+                            <label htmlFor='address'>Address</label>
+                            <input
+                                type='text'
+                                id='address'
+                                required
+                            />
+                        </div>
+                    </>
+                )}
+                {!login ? (
+                    <div className='btn-wrapper'>
+                        <button className='btn btn-dark'>Register</button>
+                        <p className='p'>Already have an account?</p>
+                        <button className='btn btn-dark' type='button' onClick={handleSetLogin}>
+                            Login
+                        </button>
+                    </div>
+                ) : (
+                    <div className='btn-wrapper'>
+                        <button className='btn btn-dark'>Login</button>
+                        <p className='p'>New here?</p>
+                        <button className='btn btn-dark' type='button' onClick={handleSetLogin}>
+                            Register
+                        </button>
+                    </div>
+                )}
+            </form>
+        </div>
     );
 }
