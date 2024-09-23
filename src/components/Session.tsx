@@ -1,5 +1,5 @@
 
-import Image from 'next/image'
+//import Image from 'next/image'
 import '../styles/session.scss';
 import ClockIcon from '../../public/clock.svg'
 interface Props {
@@ -20,7 +20,7 @@ const Session: React.FC<Props> = ({ alt, title, duration, img, text }) => {
             </svg>
             <h5 className="session__name">{title}</h5>
             <div className="session__duration">
-               <Image src={ClockIcon} />
+               <img src={ClockIcon} />
 
                 <p>{duration}</p>
             </div>
