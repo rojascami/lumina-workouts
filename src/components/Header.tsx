@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 import '../styles/header.scss'
 import Favicon from '../../public/favicon.svg'
 import BBC from '../images/logo-bbc.png'
@@ -11,7 +11,7 @@ const Header: React.FC<{}> = () => {
   return (
     <header className="header">
       <div className="header__svg">
-        <Image src={Favicon}></Image>
+        <img src={Favicon}></img>
       </div>
       <h3 className="heading-3 header__heading">Your own pase</h3>
       <h1 className="heading-1">
